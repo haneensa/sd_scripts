@@ -53,10 +53,10 @@ groups = [10, 50, 100, 1000, 10000]
 cardinality = [1000, 10000, 100000, 1000000, 5000000, 10000000]
 max_val = 100
 a_list = [1, 0]
-#MicroDataZipfan(folder, groups, cardinality, max_val, a_list)
+MicroDataZipfan(folder, groups, cardinality, max_val, a_list)
 selectivity = [0.0, 0.02, 0.2, 0.5, 0.8, 1.0]
 cardinality = [1000000, 5000000, 10000000]
-MicroDataSelective(folder, selectivity, cardinality)
+MicroDataSelective(folder, selectivity, cardinality, max_val)
 
 ################### Order By ###########################
 ##  order on 'z' with 'g' unique values and table size
@@ -164,7 +164,7 @@ a_list = [0, 0.5, 0.8, 1]
 MicroDataZipfan(folder, groups, [1000], max_val, a_list)
 cardinality = [10000, 100000, 1000000]
 # number of matching elements n / g
-MicroDataZipfan(folder, [10, 100], cardinality, max_val, a_list)
+MicroDataZipfan(folder, [5, 10, 100], cardinality, max_val, a_list)
 op = "HASH_JOIN"
 MtM(con, args, folder, lineage_type, groups, cardinality, a_list, results, op,False)
 

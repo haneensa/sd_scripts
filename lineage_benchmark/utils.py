@@ -153,7 +153,7 @@ def MicroDataZipfan(folder, groups, cardinality, max_val, a_list):
                     df = pd.DataFrame({'idx':idx, 'z': zipfan, 'v': vals})
                     df.to_csv(filename, index=False)
 
-def MicroDataSelective(folder, selectivity, cardinality):
+def MicroDataSelective(folder, selectivity, cardinality, max_val):
     ## filter data
     for sel in selectivity:
         for card in cardinality:

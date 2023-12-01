@@ -114,7 +114,7 @@ for i in range(1,23):
         tpch = text_file.read()
         tpch = " ".join(tpch.split())
         text_file.close()
-        distinct_avg, distinct_df = Run(tpch, args, con)
+        distinct_avg, distinct_df, _ = Run(tpch, args, con)
         distinct_count = len(distinct_df)
         con.execute("DROP TABLE "+table_name)
     print("**** output size: ", output_size)
@@ -137,5 +137,5 @@ if args.save_csv:
         control = 'a'
     with open(filename, control) as csvfile:
         csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(header)
+        #csvwriter.writerow(header)
         csvwriter.writerows(results)

@@ -53,7 +53,7 @@ def PersistResults(results, filename, append):
         control = 'a'
     with open(filename, control) as csvfile:
         csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(header)
+        #csvwriter.writerow(header)
         csvwriter.writerows(results)
 
 ################### Order By ###########################

@@ -275,7 +275,7 @@ def get_db():
         con = duckdb.connect(database=database, read_only=False)
     else:
         con = duckdb.connect(database=database, read_only=False)
-        result_file = "micro_benchmark_notes_all.csv"
+        result_file = "micro_benchmark_notes_reproduce.csv"
         preprocess(con, result_file)
     return con
 

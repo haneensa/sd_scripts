@@ -393,16 +393,16 @@ plot_hash_join_mtm(con)
 plot_aggs(con)
 
 ######### Summary
-#summary(con, "HASH_JOIN", "n1, n2, skew, groups", True)
-#summary(con, "HASH_JOIN_mtm", "n1, n2, skew, groups", True)
-#for op_type in ('NESTED_LOOP_JOIN', 'PIECEWISE_MERGE_JOIN', 'BLOCKWISE_NL_JOIN', "CROSS_PRODUCT"):
-#    summary(con, op_type, "n1, sel", True)
-#summary(con, "HASH_GROUP_BY", "n1, groups")
-#summary(con, "PERFECT_HASH_GROUP_BY", "n1, groups", True)
-#summary(con, "FILTER", "n1, sel, ncol")
-#summary(con, "SEQ_SCAN", "n1, sel, ncol")
-#summary(con, "SEQ", "n1, ncol")
-#summary(con, "ORDER_BY", "n1, ncol")
+summary(con, "HASH_JOIN", "n1, n2, skew, groups", True)
+summary(con, "HASH_JOIN_mtm", "n1, n2, skew, groups", True)
+for op_type in ('NESTED_LOOP_JOIN', 'PIECEWISE_MERGE_JOIN', 'BLOCKWISE_NL_JOIN', "CROSS_PRODUCT"):
+    summary(con, op_type, "n1, sel", True)
+summary(con, "HASH_GROUP_BY", "n1, groups")
+summary(con, "PERFECT_HASH_GROUP_BY", "n1, groups", True)
+summary(con, "FILTER", "n1, sel, ncol")
+summary(con, "SEQ_SCAN", "n1, sel, ncol")
+summary(con, "SEQ", "n1, ncol")
+summary(con, "ORDER_BY", "n1, ncol")
 
 header_unique = ["query", "n1", "n2", "skew", "ncol", "sel", "groups",  "index_join"]
 g = ','.join(header_unique)

@@ -78,11 +78,11 @@ def getMat(plan, op):
         return 0
     return plan[op]
 
-df = pd.read_csv("tpch_benchmark_capture_all.csv")
+df = pd.read_csv("tpch_benchmark_capture_reproduce_sd.csv")
 df.loc[:, "distinct_runtime"] = df.apply(lambda x: 0, axis=1)
 df.loc[:, "distinct_output"] = df.apply(lambda x: 0, axis=1)
 
-df_logical = pd.read_csv("tpch_benchmark_capture_oct8_logicalv2.csv")
+df_logical = pd.read_csv("tpch_benchmark_capture_reproduce_logical.csv")
 df = pd.concat([df, df_logical], ignore_index=True)
 
 header_unique = ["query","sf", "qtype", "lineage_type", "n_threads"]
